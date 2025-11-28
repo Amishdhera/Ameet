@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title> Ameet Kumar Dhera </title>
+  <meta name="description" content="Project Portfolio - Ameet Kumar Dhera - Full Stack Developer">
+  <meta name="keywords" content="Portfolio, Projects, Web Development, Mobile Apps, Flutter">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Custom Styles for Better UI */
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      background: white;
+      margin-bottom: 30px;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-info {
+      padding: 20px;
+      background: white;
+    }
+
+    .portfolio-info h4 {
+      color: #2c3e50;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .portfolio-info p {
+      color: #7f8c8d;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .portfolio-links {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+
+    .portfolio-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid #34b7a7;
+      color: #34b7a7;
+      background: white;
+    }
+
+    .portfolio-links a:hover {
+      background: #34b7a7;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .portfolio-links a.preview-link:hover {
+      border-color: #e74c3c;
+      background: #e74c3c;
+    }
+
+    .portfolio-links a.demo-link:hover {
+      border-color: #27ae60;
+      background: #27ae60;
+    }
+
+    .portfolio-links a.details-link:hover {
+      border-color: #f39c12;
+      background: #f39c12;
+    }
+
+    .section-title h2 {
+      color: #2c3e50;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #7f8c8d;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .stat-item {
+      background: linear-gradient(135deg, #34b7a7 0%, #34b7a7 100%);
+      padding: 30px 20px;
+      border-radius: 15px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-item h4 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .stat-item p {
+      font-size: 1.1rem;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    .portfolio-stats {
+      background: #f8f9fa;
+      padding: 60px 0;
+      border-radius: 20px;
+      margin-top: 50px;
+    }
+
+    .portfolio-stats h3 {
+      color: #34b7a7;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    /* Header Improvements */
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      padding: 15px 0;
+      transition: all 0.3s ease;
+    }
+
+    .navmenu ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+    }
+
+    .navmenu ul li {
+      position: relative;
+    }
+
+    .navmenu ul li a {
+      display: block;
+      position: relative;
+      color: #2c3e50;
+      padding: 10px 15px;
+      transition: 0.3s;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .navmenu ul li a:hover,
+    .navmenu ul li a.active {
+      color: #34b7a7;
+    }
+
+    .navmenu ul li a:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #34b7a7;
+      bottom: 0;
+      left: 0;
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    .navmenu ul li a:hover:after,
+    .navmenu ul li a.active:after {
+      width: 100%;
+    }
+
+    .header-social-links a {
+      color: #2c3e50;
+      padding: 8px 0;
+      margin-left: 15px;
+      display: inline-block;
+      line-height: 1;
+      transition: all 0.3s ease;
+    }
+
+    .header-social-links a:hover {
+      transform: scale(1.2);
+      color: #34b7a7;
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav-toggle {
+      color: #2c3e50;
+      font-size: 28px;
+      cursor: pointer;
+      display: none;
+      line-height: 0;
+      transition: 0.5s;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 9999;
+    }
+
+    .mobile-nav-toggle.bi-x {
+      color: #2c3e50;
+    }
+
+    @media (max-width: 1199px) {
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      .navmenu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        padding: 70px 20px 30px;
+        background: #ffffff;
+        transition: all 0.5s ease-in-out;
+        z-index: 9998;
+        overflow-y: auto;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+        border-left: 1px solid #e9ecef;
+      }
+
+      .navmenu.active {
+        right: 0;
+      }
+
+      .navmenu ul {
+        display: block;
+        padding: 0;
+      }
+
+      .navmenu ul li {
+        padding: 0;
+        border-bottom: 1px solid #f8f9fa;
+      }
+
+      .navmenu ul li:last-child {
+        border-bottom: none;
+      }
+
+      .navmenu ul li a {
+        padding: 15px 20px;
+        font-size: 16px;
+        color: #2c3e50;
+        border: none;
+        font-weight: 500;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      .navmenu ul li a:hover,
+      .navmenu ul li a.active {
+        color: #34b7a7;
+        background-color: #f8f9fa;
+        padding-left: 25px;
+      }
+
+      .navmenu ul li a:after {
+        display: none;
+      }
+
+      .header-social-links {
+        margin: 0 15px 0 0;
+        display: flex;
+      }
+
+      /* Remove any backdrop/overlay */
+      body.menu-open::before {
+        display: none;
+      }
+    }
+
+    /* Footer Improvements */
+    .footer {
+      color: white;
+      padding: 40px 0 20px;
+    }
+
+    .footer .copyright {
+      color: #000000;
+    }
+
+    .footer .social-links a {
+      color: rgb(0, 0, 0);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .footer .social-links a:hover {
+      background: #34b7a7;
+      transform: scale(1.1);
+    }
+    
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .portfolio-item {
+        margin-bottom: 20px;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      
+      .stat-item h4 {
+        font-size: 2.5rem;
+      }
+      
+      .header-social-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .portfolio-links {
+        justify-content: center;
+      }
+      
+      .navmenu {
+        width: 100%;
+        right: -100%;
+      }
+      
+      .navmenu.active {
+        right: 0;
+      }
+    }
+
+    /* Animation Classes */
+    .fade-in {
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Category Badges */
+    .category-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #34b7a7;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body class="portfolio-page">
+
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Ameet</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://github.com/amishdhera" class="github" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://amishdhera.github.io/app/" class="Applications"><i class="bi bi-phone"></i></a>
+        <a href="https://www.instagram.com/ameet_kumar12/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/ameet-kumar-dhera-038243262" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>My Portfolio</h2>
+        <p>Explore my latest projects and development work across different technologies</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <!-- VIP Bags E-commerce -->
+          <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+            <div class="portfolio-card">
+              <img src="assets/img/vip.png" class="img-fluid" alt="VIP Bags E-commerce">
+              <span class="category-badge">E-commerce</span>
+              <div class="portfolio-info">
+                <h4>VIP Bags E-commerce</h4>
+                <p>Online shopping website for bags & accessories with modern UI design</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/vip.png" title="Preview" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://amishdhera.github.io/Vip-Bags/html/" target="_blank" title="Live Demo" class="demo-link"><i class="bi bi-play-circle"></i></a>
+                  <a href="https://amishdhera.github.io/Vip-Bags/html/" title="Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <!-- Delicious Bites E-commerce -->
+          <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+            <div class="portfolio-card">
+              <img src="assets/img/bites.png" class="img-fluid" alt="Delicious Bites E-commerce">
+              <span class="category-badge">Food & E-commerce</span>
+              <div class="portfolio-info">
+                <h4>Delicious Bites E-commerce</h4>
+                <p>Online food ordering website with responsive design and modern interface</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/bites.png" title="Preview" data-gallery="portfolio-gallery-web" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://amishdhera.github.io/Delicious-Bites/" target="_blank" title="Live Demo" class="demo-link"><i class="bi bi-play-circle"></i></a>
+                  <a href="https://amishdhera.github.io/Delicious-Bites/" title="Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <!-- Cities Guide App -->
+          <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+            <div class="portfolio-card">
+              <img src="assets/img/city.png" class="img-fluid" alt="Cities Guide App">
+              <span class="category-badge">Mobile App</span>
+              <div class="portfolio-info">
+                <h4>Cities Guide App</h4>
+                <p>Mobile application providing comprehensive city information and travel guide</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/city.png" title="Preview" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://amishdhera.github.io/app/" target="_blank" title="Live Demo" class="demo-link"><i class="bi bi-play-circle"></i></a>
+                  <a href="https://amishdhera.github.io/app/" title="Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <!-- Pet Care App -->
+          <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+            <div class="portfolio-card">
+              <img src="assets/img/petcare.png" class="img-fluid" alt="Pet Care App">
+              <span class="category-badge">Mobile App</span>
+              <div class="portfolio-info">
+                <h4>Pet Care App</h4>
+                <p>Mobile application for pet care management and veterinary services</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/petcare.png" title="Preview" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://wahabniazi09.github.io/Pet-Care-TechWiz/" target="_blank" title="Live Demo" class="demo-link"><i class="bi bi-play-circle"></i></a>
+                  <a href="https://wahabniazi09.github.io/Pet-Care-TechWiz/" title="Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <!-- Currency Converter -->
+          <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+            <div class="portfolio-card">
+              <img src="assets/img/dollar.png" class="img-fluid" alt="Currency Converter">
+              <span class="category-badge">Utility Tool</span>
+              <div class="portfolio-info">
+                <h4>Currency Converter</h4>
+                <p>Real-time currency conversion tool with up-to-date exchange rates</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/dollar.png" title="Preview" data-gallery="portfolio-gallery-tools" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://amishdhera.github.io/currency_converter/" target="_blank" title="Live Demo" class="demo-link"><i class="bi bi-play-circle"></i></a>
+                  <a href="https://amishdhera.github.io/currency_converter/" title="Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <!-- Greeting App -->
+          <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+            <div class="portfolio-card">
+              <img src="assets/img/wish.png" class="img-fluid" alt="Greeting App">
+              <span class="category-badge">Mobile App</span>
+              <div class="portfolio-info">
+                <h4>Greeting App</h4>
+                <p>Celebration and greeting application with beautiful animations</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/wish.png" title="Preview" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://amishdhera.github.io/wish_app/" target="_blank" title="Live Demo" class="demo-link"><i class="bi bi-play-circle"></i></a>
+                  <a href="https://amishdhera.github.io/wish_app/" title="Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <!-- Tappy Number Game -->
+          <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+            <div class="portfolio-card">
+              <img src="assets/img/tapp.png" class="img-fluid" alt="Tappy Number Game">
+              <span class="category-badge">Game</span>
+              <div class="portfolio-info">
+                <h4>Tappy Number Game</h4>
+                <p>Interactive number tapping game with score tracking and levels</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/tapp.png" title="Preview" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://amishdhera.github.io/Tappy_Number/" target="_blank" title="Live Demo" class="demo-link"><i class="bi bi-play-circle"></i></a>
+                  <a href="https://amishdhera.github.io/Tappy_Number/" title="Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+
+          <!-- Rozana Ka Hisab -->
+          <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+            <div class="portfolio-card">
+              <img src="assets/img/rozna.png" class="img-fluid" alt="Rozana Ka Hisab">
+              <span class="category-badge">Utility Tool</span>
+              <div class="portfolio-info">
+                <h4>Rozana Ka Hisab</h4>
+                <p>Daily expense tracking application with budget management features</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/rozna.png" title="Preview" data-gallery="portfolio-gallery-tools" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://amishdhera.github.io/Rozana-Ka-Hisab/loader" target="_blank" title="Live Demo" class="demo-link"><i class="bi bi-play-circle"></i></a>
+                  <a href="https://amishdhera.github.io/Rozana-Ka-Hisab/loader" title="Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Portfolio Item -->
+          <!-- webapplication -->
+                <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+            <div class="portfolio-card">
+              <img src="assets/img/movies.png" class="img-fluid" alt="Rozana Ka Hisab">
+              <span class="category-badge">Web Application </span>
+              <div class="portfolio-info">
+                <h4>Movie App</h4>
+                <p>Movie information and discovery application with search functionality</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/movies.png" title="Preview" data-gallery="portfolio-gallery-tools" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://github.com/Amishdhera/MovieApp" target="_blank" title="Live Demo" class="demo-link"><i class="bi bi-play-circle"></i></a>
+                  <a href="https://github.com/Amishdhera/MovieApp" title="Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+           <!-- webapplicatiopn -->
+
+        </div><!-- End Portfolio Container -->
+
+        <!-- Quick Stats Section -->
+        <div class="row mt-5" data-aos="fade-up">
+          <div class="col-12">
+            <div class="portfolio-stats text-center">
+              <h3>Project Statistics</h3>
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <h4>8+</h4>
+                  <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                  <h4>4</h4>
+                  <p>Web Applications</p>
+                </div>
+                <div class="stat-item">
+                  <h4>4</h4>
+                  <p>Mobile Apps</p>
+                </div>
+                <div class="stat-item">
+                  <h4>3</h4>
+                  <p>Utility Tools</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+  </main>
+
+ <footer id="footer" class="footer light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+       <p>© <span>Copyright</span> <strong class="px-1 sitename">Ameet Kumar Dhera</strong> <span>All Rights Reserved</span></p>
+        <p class="small">Full Stack Developer | Web & Mobile Applications Specialist</p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+             <a href="https://github.com/amishdhera" class="github" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://amishdhera.github.io/app/" class="Applications"><i class="bi bi-phone"></i></a>
+        <a href="https://www.instagram.com/ameet_kumar12/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="www.linkedin.com/in/ameet-kumar-dhera-038243262" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Mobile Navigation Toggle Script -->
+  <script>
+  
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const navmenu = document.querySelector('#navmenu');
+      const body = document.querySelector('body');
+      
+      mobileNavToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        navmenu.classList.toggle('active');
+        mobileNavToggle.classList.toggle('bi-list');
+        mobileNavToggle.classList.toggle('bi-x');
+        body.classList.toggle('menu-open');
+      });
+      
+      // Close mobile menu when clicking on a nav link
+      const navLinks = document.querySelectorAll('#navmenu a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (navmenu.classList.contains('active')) {
+            navmenu.classList.remove('active');
+            mobileNavToggle.classList.toggle('bi-list');
+            mobileNavToggle.classList.toggle('bi-x');
+            body.classList.remove('menu-open');
+          }
+        });
+      });
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (navmenu.classList.contains('active') && 
+            !navmenu.contains(e.target) && 
+            !mobileNavToggle.contains(e.target)) {
+          navmenu.classList.remove('active');
+          mobileNavToggle.classList.add('bi-list');
+          mobileNavToggle.classList.remove('bi-x');
+          body.classList.remove('cross');
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

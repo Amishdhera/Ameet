@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title> Ameet Kumar Dhera</title>
+  <meta name="description" content="Contact Ameet Kumar Dhera - Full Stack Developer">
+  <meta name="keywords" content="Contact, Hire, Web Developer, Mobile Developer, Flutter">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Green Theme Styles for Contact Page */
+    :root {
+      --primary-green: #34b7a7;
+      --secondary-green: #2a9d8f;
+      --light-green: #48cae4;
+      --dark-green: #1a7567;
+      --accent-green: #76c893;
+    }
+
+    .contact .info-item {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(52, 183, 167, 0.1);
+      border-left: 4px solid var(--primary-green);
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .contact .info-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(52, 183, 167, 0.2);
+    }
+
+    .contact .info-item i {
+      font-size: 2rem;
+      color: var(--primary-green);
+      margin-bottom: 15px;
+    }
+
+    .contact .info-item h3 {
+      font-size: 1.3rem;
+      color: var(--dark-green);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .contact .info-item p {
+      color: #64748b;
+      margin-bottom: 5px;
+    }
+
+    .contact .info-item a {
+      color: var(--primary-green);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact .info-item a:hover {
+      color: var(--secondary-green);
+    }
+
+    /* Contact Form Styles */
+    .contact .php-email-form {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(52, 183, 167, 0.1);
+      border: 2px solid #e0f2fe;
+    }
+
+    .contact .php-email-form .form-group {
+      margin-bottom: 25px;
+    }
+
+    .contact .php-email-form input,
+    .contact .php-email-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: #f8fafc;
+    }
+
+    .contact .php-email-form input:focus,
+    .contact .php-email-form textarea:focus {
+      outline: none;
+      border-color: var(--primary-green);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(52, 183, 167, 0.1);
+    }
+
+    .contact .php-email-form button[type="submit"] {
+      background: var(--primary-green);
+      color: white;
+      border: none;
+      padding: 12px 40px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact .php-email-form button[type="submit"]:hover {
+      background: var(--secondary-green);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(52, 183, 167, 0.3);
+    }
+
+    /* Section Title */
+    .section-title h2 {
+      color: var(--dark-green);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #64748b;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Header Styles */
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      padding: 15px 0;
+      transition: all 0.3s ease;
+    }
+
+    .navmenu ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+    }
+
+    .navmenu ul li {
+      position: relative;
+    }
+
+    .navmenu ul li a {
+      display: block;
+      position: relative;
+      color: #2c3e50;
+      padding: 10px 15px;
+      transition: 0.3s;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .navmenu ul li a:hover,
+    .navmenu ul li a.active {
+      color: var(--primary-green);
+    }
+
+    .navmenu ul li a:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--primary-green);
+      bottom: 0;
+      left: 0;
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    .navmenu ul li a:hover:after,
+    .navmenu ul li a.active:after {
+      width: 100%;
+    }
+
+    .sitename {
+      color: var(--dark-green) !important;
+      font-weight: 700;
+    }
+
+    .professional-title {
+      color: var(--primary-green);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-left: 10px;
+      padding-left: 10px;
+      border-left: 2px solid var(--accent-green);
+    }
+
+    /* Social Links */
+    .header-social-links a {
+      transition: all 0.3s ease;
+      color: #64748b;
+    }
+
+    .header-social-links a:hover {
+      transform: scale(1.2);
+      color: var(--primary-green);
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav-toggle {
+      color: #2c3e50;
+      font-size: 28px;
+      cursor: pointer;
+      display: none;
+      line-height: 0;
+      transition: 0.5s;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 9999;
+    }
+
+    .mobile-nav-toggle.bi-x {
+      color: #2c3e50;
+    }
+
+    @media (max-width: 1199px) {
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      .navmenu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        padding: 70px 20px 30px;
+        background: #ffffff;
+        transition: all 0.5s ease-in-out;
+        z-index: 9998;
+        overflow-y: auto;
+        box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+        border-left: 1px solid #e9ecef;
+      }
+
+      .navmenu.active {
+        right: 0;
+      }
+
+      .navmenu ul {
+        display: block;
+        padding: 0;
+      }
+
+      .navmenu ul li {
+        padding: 0;
+        border-bottom: 1px solid #f8f9fa;
+      }
+
+      .navmenu ul li:last-child {
+        border-bottom: none;
+      }
+
+      .navmenu ul li a {
+        padding: 15px 20px;
+        font-size: 16px;
+        color: #2c3e50;
+        border: none;
+        font-weight: 500;
+        display: block;
+        transition: all 0.3s ease;
+      }
+
+      .navmenu ul li a:hover,
+      .navmenu ul li a.active {
+        color: var(--primary-green);
+        background-color: #f8f9fa;
+        padding-left: 25px;
+      }
+
+      .navmenu ul li a:after {
+        display: none;
+      }
+
+      .header-social-links {
+        margin: 0 15px 0 0;
+        display: flex;
+      }
+
+      /* Remove any backdrop/overlay */
+      body.menu-open::before {
+        display: none;
+      }
+    }
+
+    /* Footer Styles */
+    .footer {
+      color: rgb(0, 0, 0);
+      padding: 40px 0 20px;
+    }
+
+    .footer .copyright {
+      color: #000000;
+    }
+
+    .footer .social-links a {
+      color: rgb(0, 0, 0);
+      background: rgba(255, 255, 255, 0.2);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .footer .social-links a:hover {
+      transform: scale(1.1);
+      border-color: white;
+    }
+
+    /* Map Section */
+    .map-section {
+      margin-top: 50px;
+    }
+
+    .map-container {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 25px rgba(52, 183, 167, 0.1);
+      border: 2px solid #e0f2fe;
+    }
+
+    /* Availability Status */
+    .availability {
+      background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(52, 183, 167, 0.3);
+    }
+
+    .availability h4 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    /* Contact Options Styles */
+    .contact-options {
+      margin-top: 30px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(52, 183, 167, 0.1);
+      border: 2px solid #e0f2fe;
+    }
+
+    .contact-option {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f8fafc;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-option:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(52, 183, 167, 0.1);
+    }
+
+    .option-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--primary-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .option-content {
+      flex: 1;
+    }
+
+    .option-content h4 {
+      color: var(--dark-green);
+      margin-bottom: 5px;
+    }
+
+    .option-content p {
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+
+    .option-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-green);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .option-btn:hover {
+      background: var(--secondary-green);
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    .whatsapp-btn {
+      background: #25D366;
+    }
+
+    .whatsapp-btn:hover {
+      background: #128C7E;
+    }
+
+    .call-btn {
+      background: var(--primary-green);
+    }
+
+    .call-btn:hover {
+      background: var(--secondary-green);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact .php-email-form {
+        padding: 30px 20px;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .professional-title {
+        display: none;
+      }
+      
+      .contact .info-item {
+        padding: 20px;
+      }
+      
+      .header-social-links {
+        display: none;
+      }
+      
+      .contact-option {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .option-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .contact .php-email-form {
+        padding: 20px 15px;
+      }
+      
+      .contact .info-item {
+        text-align: center;
+      }
+      
+      .navmenu {
+        width: 100%;
+        right: -100%;
+      }
+      
+      .navmenu.active {
+        right: 0;
+      }
+    }
+
+    /* Animation */
+    .fade-in {
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="contact-page">
+
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Ameet</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://github.com/amishdhera" class="github" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://amishdhera.github.io/app/" class="Applications"><i class="bi bi-phone"></i></a>
+        <a href="https://www.instagram.com/ameet_kumar12/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="www.linkedin.com/in/ameet-kumar-dhera-038243262" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact Me</h2>
+        <p>Get in touch with me for your next project or collaboration</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+
+            <div class="row gy-4">
+              <!-- Phone -->
+              <div class="col-md-6">
+                <div class="info-item fade-in">
+                  <i class="bi bi-phone"></i>
+                  <h3>Call Me</h3>
+                  <p>+92 3161103616</p>
+                  <p>Available: 9:00 AM - 6:00 PM</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <!-- Email -->
+              <div class="col-md-6">
+                <div class="info-item fade-in">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email Me</h3>
+                  <p>amishdhera@gmail.com</p>
+                  <p>Response within 24 hours</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <!-- Location -->
+              <div class="col-md-6">
+                <div class="info-item fade-in">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Location</h3>
+                  <p>Bhimpura Karachi</p>
+                  <p>Pakistan</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <!-- Social Media -->
+              <div class="col-md-6">
+                <div class="info-item fade-in">
+                  <i class="bi bi-share"></i>
+                  <h3>Social Profiles</h3>
+                  <p>
+                    <a href="https://github.com/amishdhera" target="_blank">GitHub</a> | 
+                    <a href="https://www.linkedin.com/in/ameet-kumar-dhera-038243262" target="_blank">LinkedIn</a>
+                  </p>
+                  <p>
+                    <a href="https://www.instagram.com/ameet_kumar12/" target="_blank">Instagram</a>
+                  </p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <div class="contact-options fade-in">
+              <div class="contact-card">
+                <h3>Quick Contact Options</h3>
+                <p>Choose your preferred way to get in touch with me</p>
+                
+                <!-- Email Option -->
+                <div class="contact-option">
+                  <div class="option-icon">
+                    <i class="bi bi-envelope-fill"></i>
+                  </div>
+                  <div class="option-content">
+                    <h4>Send Email</h4>
+                    <p>Send me an email directly</p>
+                    <a href="mailto:amishdhera@gmail.com?subject=Project%20Inquiry&body=Hello%20Ameet,%20I%20would%20like%20to%20discuss%20a%20project%20with%20you." class="option-btn">
+                      <i class="bi bi-send"></i>
+                      Send Email
+                    </a>
+                  </div>
+                </div>
+
+                <!-- WhatsApp Option -->
+                <div class="contact-option">
+    <div class="option-icon">
+        <i class="bi bi-whatsapp"></i>
+    </div>
+    <div class="option-content">
+        <h4>WhatsApp Message</h4>
+        <p>Chat with me on WhatsApp</p>
+        <a href="https://wa.me/923161103616?text=Hello%20Ameet,%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." 
+           class="option-btn whatsapp-btn" 
+           target="_blank"
+           style="background-color: #34b7a7;">
+            <i class="bi bi-whatsapp"></i>
+            Message on WhatsApp
+        </a>
+    </div>
+</div>
+
+                <!-- Direct Call Option -->
+                <div class="contact-option">
+                  <div class="option-icon">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <div class="option-content">
+                    <h4>Direct Call</h4>
+                    <p>Call me directly</p>
+                    <a href="tel:+923161103616" class="option-btn call-btn">
+                      <i class="bi bi-telephone"></i>
+                      Call Now
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div><!-- End Contact Options -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+       <p>© <span>Copyright</span> <strong class="px-1 ">Ameet Kumar Dhera</strong> <span>All Rights Reserved</span></p>
+        <p class="small">Full Stack Developer | Web & Mobile Applications Specialist</p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+             <a href="https://github.com/amishdhera" class="github" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://amishdhera.github.io/app/" class="Applications"><i class="bi bi-phone"></i></a>
+        <a href="https://www.instagram.com/ameet_kumar12/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="www.linkedin.com/in/ameet-kumar-dhera-038243262" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+      
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Mobile Navigation Toggle Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navmenu = document.querySelector('#navmenu');
+  const body = document.body;
+
+  // Ensure menu starts closed
+  navmenu.classList.remove('active');
+  
+  // Force toggle icon to hamburger on page load
+  mobileNavToggle.classList.add('bi-list');
+  mobileNavToggle.classList.remove('bi-x');
+
+  body.classList.remove('menu-open');
+
+  // Toggle mobile menu
+  mobileNavToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    navmenu.classList.toggle('active');
+    mobileNavToggle.classList.toggle('bi-list');
+    mobileNavToggle.classList.toggle('bi-x');
+    body.classList.toggle('menu-open');
+  });
+
+  // Close menu on nav link click
+  const navLinks = document.querySelectorAll('#navmenu a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navmenu.classList.contains('active')) {
+        navmenu.classList.remove('active');
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
+        body.classList.remove('menu-open');
+      }
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (navmenu.classList.contains('active') &&
+        !navmenu.contains(e.target) &&
+        !mobileNavToggle.contains(e.target)) {
+      navmenu.classList.remove('active');
+      mobileNavToggle.classList.add('bi-list');
+      mobileNavToggle.classList.remove('bi-x');
+      body.classList.remove('menu-open');
+    }
+  });
+});
+
+  </script>
+
+</body>
+
+</html>
